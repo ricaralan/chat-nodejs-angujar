@@ -1,0 +1,18 @@
+.modal.fade.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2#modalChooseAvatar
+	.modal-dialog
+		.modal-content
+			.modal-header
+				h4 Selecciona tu avatar y proporciona tu nombre
+			.modal-body
+				.col-md-12
+					p(ng-repeat="i in avatars" class="col-md-2 col-sm-3 col-xs-2")
+						a(href="#" ng-click="chooseAvatar((avatars[i]-0) + 1)")
+							img(src="{{getURLAvatarImage((avatars[i]-0) + 1)}}" width="50px")
+			.modal-footer
+				div
+					center
+						h5 Avatar seleccionado
+						img(src="{{getURLAvatarImage(selectedAvatar)}}" width="100px")
+						br
+						input(type="text" class="form-control" id="input-avatar-name" placeholder="Como quieres que te conozcan?" ng-model="avatarName")
+						button(class="btn btn-primary" ng-click="closeChooseAvatar()") Entrar

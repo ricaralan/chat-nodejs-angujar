@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	div(id="main-content" ng-controller="ChatController")
+		#content.col-md-6.col-md-offset-3.col-sm-6.col-sm-offset-3.col-xs-10.col-xs-offset-1
+			.col-md-12
+				h4 Envia y recibe mensajes
+			.col-md-12
+				#content-messages
+			.col-md-12
+				textarea(id="input-message" class="form-control" ng-model="message")
+				button(class="btn btn-primary pull-right" ng-click="sendMessage()") Enviar
